@@ -1,5 +1,5 @@
 const MONGO_DB_CONFIG={
-    DB:"mongodb://localhost/meeting-app"
+    DB:"mongodb+srv://solaymank71:1TlG532JNYFnNQKD@cluster0.qfjokn5.mongodb.net/?retryWrites=true&w=majority"
 };
 
 module.exports={
