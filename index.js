@@ -4,11 +4,8 @@ const mongoose = require("mongoose");
 const { MONGO_DB_CONFIG } = require("./config/app.config");
 const http = require("http");
 const server = http.createServer(app);
-const {initMeetingServer}=require("./meeting-server");
-
+const { initMeetingServer } = require("./meeting-server");
 initMeetingServer(server);
-
-
 
 mongoose.Promise = global.Promise;
 mongoose.connect(MONGO_DB_CONFIG.DB, {
@@ -17,14 +14,14 @@ mongoose.connect(MONGO_DB_CONFIG.DB, {
 }).then(() => {
     console.log("Database Connected");
 }, (error) => {
-    console.log("Database Can't be Connected");
+    console.log(error);
 });
 
 
 app.use(express.json());
-app.use("/api",require("./routes/app.routes"));
+app.use("/api", require("./routes/app.routes"));
 
 
-server.listen(process.env.port || 500,function(){
+server.listen(process.env.PORT || 8080, function () {
     console.log("Ready to GO!");
 });
