@@ -25,6 +25,6 @@ app.use(express.json());
 app.use("/api",require("./routes/app.routes"));
 
 
-server.listen(process.env.port || 500,function(){
+server.listen(process.env.PORT || 5000,function(){
     console.log("Ready to GO!");
 });
